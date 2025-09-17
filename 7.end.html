@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>END</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Merriweather', serif;
+            font-weight: 300;
+            font-style: italic;
+            background-color: #fde1ea;
+            text-align: center;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: auto;
+            padding-top: 150px;
+            font-size: 22px;
+            color: #333;
+            opacity: 0;
+            transition: opacity 0.8s ease;
+    }
+    body.fade-in { opacity: 1; }
+    body.fade-out { opacity: 0; }
+
+    #typing {
+      font-size: 26px;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: auto;
+      white-space: pre-line;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 30px;
+      left: 0;
+      right: 0;
+      text-align: center;
+    }
+
+    @keyframes fadeInBtn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .firework {
+      position: fixed;
+      width: 5px;
+      height: 5px;
+      background: yellow;
+      border-radius: 50%;
+      animation: explode 1.2s ease-out forwards;
+      pointer-events: none;
+    }
+    @keyframes explode {
+      to {
+        transform: translate(var(--x), var(--y));
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <p id="typing"></p>
+
+  <footer>
+  </footer>
+
+  <script>
+    // Hiệu ứng gõ chữ
+    function typeEffect(callback) {
+      const text = "Cậu vừa gửi tín hiệu này lên vệ tinh của NASA đó,\nbây giờ tín hiệu vũ trụ sẽ truyền đến não tớ.\nCheck điện thoại đi =)))";
+      const container = document.getElementById("typing");
+      let i = 0;
+
+      function typing() {
+        if (i < text.length) {
+          container.innerHTML += text.charAt(i) === "\n" ? "<br>" : text.charAt(i);
+          i++;
+          setTimeout(typing, 100);
+        } else {
+          if (callback) callback(); // gọi callback sau khi xong
+        }
+      }
+      typing();
+    }
+
+    // Hiệu ứng pháo hoa
+    function createFirework(x, y) {
+      for (let i = 0; i < 50; i++) {
+        const fw = document.createElement("div");
+        fw.className = "firework";
+        document.body.appendChild(fw);
+
+        const angle = Math.random() * 2 * Math.PI;
+        const distance = 80 + Math.random() * 200;
+        fw.style.left = x + "px";
+        fw.style.top = y + "px";
+        fw.style.setProperty("--x", Math.cos(angle) * distance + "px");
+        fw.style.setProperty("--y", Math.sin(angle) * distance + "px");
+        fw.style.background = `hsl(${Math.random()*360},100%,50%)`;
+
+        setTimeout(() => fw.remove(), 1200);
+      }
+    }
+
+    // Track click + chuyển trang
+    function goNextPage() {
+      document.body.classList.add("fade-out");
+      setTimeout(()=> window.location.href = "7.end.html", 600);
+    }
+
+    // Khi load
+    window.onload = function(){
+      document.body.classList.add("fade-in");
+
+      // Gõ chữ
+      typeEffect(() => {});
+
+      // 🔥 Pháo hoa bắn ngay từ đầu
+      setInterval(() => {
+        const x = Math.random() * window.innerWidth;
+        const y = window.innerHeight/2 + Math.random() * (window.innerHeight/2);
+        createFirework(x, y);
+      }, 800);
+    };
+  </script>
+</body>
+</html>

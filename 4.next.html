@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>P/S</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3Q4022EC2M"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-3Q4022EC2M");
+
+    window.onload = () => document.body.style.opacity = "1";
+
+    // Track click + chuyển trang có hiệu ứng
+    function trackClick(choice, url){
+      gtag("event", "button_click", {
+        button_choice: choice,
+        page: document.title
+      });
+      document.body.style.opacity = "0";
+      setTimeout(()=> window.location.href = url, 500);
+    }
+</script>
+
+    <style>
+        body {
+            font-family: 'Merriweather', serif;
+            font-weight: 300;
+            font-style: italic;
+            background-color: #fde1ea;
+            text-align: left;
+            line-height: 1.8;
+            max-width: 850px;
+            margin: auto;
+            padding-top: 150px;
+            font-size: 22px;
+            color: #333;
+            opacity: 0;
+            transition: opacity 0.8s ease;
+        }
+        body.fade-in { opacity: 1; }
+        body.fade-out { opacity: 0; }
+
+        p { font-size: 20px; line-height: 1.6; max-width: 850px; margin: auto; white-space: pre-line; }
+        button {
+            font-family: 'Merriweather', serif;
+            font-weight: 300;
+            font-style: italic;
+            margin: 10px;
+            padding: 16px 36px;
+            font-size: 22px;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            transition: transform 0.2s ease;
+        }
+        button:hover {
+            transform: scale(1.05);
+        }
+        .next {
+            background-color: #4caf50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <p> P/s: Tớ bắt đầu làm cái này từ rất lâu rồi nhưng mà lại có những suy nghĩ chợt tới làm tớ bỏ dở đ muốn làm cái này nữa và cũng đ có ý định gửi cậu nữa (tớ cũng đ biết gọi cái này là cái gì, cứ tạm gọi là bức thư nhưng không viết tay đi)
+        Nhưng mà lại có đôi lúc tâm trạng tớ kiểu đb gì lại khiến tớ làm lại cái này (¯\_(ツ)_/¯)
+        Nhưng mà làm xong rồi lại có những suy nghĩ ùa đến làm tớ phải thay đổi nội dung 540 độ
+        Xong rồi tớ lại có suy nghĩ là 'hay thôi nhỉ dm, chắc đ gì người ta muốn đọc', rồi lại 1 thời gian trôi qua.
+        Bản final tớ làm xong vào ngày 11/9 nhưng tớ không biết sẽ gửi cho cậu vào lúc nào. Có thể sẽ là vào 1 ngày không mây không sao, tâm trạng không buồn không vui, hoặc là 1 ngày đẹp trời nào đó.
+        Nhưng mà chắc chắn cậu sẽ nhận được tâm thư này, Nguyễn Thị Phương Thanh ạ 😊
+
+        P/s 2: À tớ đ biết gì nhiều về code đâu, cái này tớ nhờ GPT hết đấy =)))) Shout out to GPT nhé 🗣️🔥
+        Nhưng mà ý tưởng và văn copyright của tớ nha =)))
+        Nhưng mà cũng phải test và sửa nhiều lần lắm mới ra được thành phẩm như ý tớ đấy :((
+
+    </p>
+<button class="next" onclick="trackClick('next','5.next.html')">Next</button>
+</body>
+</html>
