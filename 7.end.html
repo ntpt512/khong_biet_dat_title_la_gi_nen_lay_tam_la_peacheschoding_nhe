@@ -80,7 +80,7 @@
   <script>
     // Hiệu ứng gõ chữ
     function typeEffect(callback) {
-      const text = "Cậu có tin vào tâm linh không =)))))\nCó 1 thứ gì đó vừa gửi đi khi cậu nhấn nút đấy\nCheck điện thoại đi";
+      const text = "Cậu có tin vào tâm linh không =)))))";
       const container = document.getElementById("typing");
       let i = 0;
 
@@ -88,7 +88,7 @@
         if (i < text.length) {
           container.innerHTML += text.charAt(i) === "\n" ? "<br>" : text.charAt(i);
           i++;
-          setTimeout(typing, 100);
+          setTimeout(typing, 120);
         } else {
           if (callback) callback(); // gọi callback sau khi xong
         }
@@ -138,6 +138,7 @@
   </script>
 </body>
 </html>
+
 
 
 
