@@ -14,7 +14,18 @@
     gtag("config", "G-3Q4022EC2M");
 
     window.onload = () => document.body.style.opacity = "1";
+
+    // Track click + chuyển trang có hiệu ứng
+    function trackClick(choice, url){
+      gtag("event", "button_click", {
+        button_choice: choice,
+        page: document.title
+      });
+      document.body.style.opacity = "0";
+      setTimeout(()=> window.location.href = url, 500);
+    }
     </script>
+
 
     <style>
         body {
@@ -37,17 +48,37 @@
         p {
             white-space: pre-line;
         }
+        button {
+            font-family: 'Merriweather', serif;
+            font-weight: 300;
+            font-style: italic;
+            margin: 10px;
+            padding: 16px 36px;
+            font-size: 22px;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            transition: transform 0.2s ease;
+        }
+        button:hover {
+            transform: scale(1.05);
+        }
+        .next {
+            background-color: #ff4d4d;
+            color: white;
+        }
     </style>
 </head>
 <body>
     <p><br>
-        Duma biết ngay kiểu gì cậu cũng tò mò bấm vào mà =)) ấn quay lại được á.  
-<br><br><br><br><br><br><br><br>
+        Duma biết ngay kiểu gì cậu cũng tò mò bấm vào mà =))) ấn quay lại được á.  
+<br><br><br><br><br><br>
         Nhưng nếu cậu muốn bấm vào đây thật thì cho tớ xin lỗi vì đã làm phiền 😢  
         Tớ có bảo tớ là người mở đầu thì tớ sẽ là người kết thúc ấy nhưng mà tớ không làm được 👉👈  
         Liệu cậu có thể là người unfriend mọi nền tảng với tớ được không, dù gì tớ cũng đã tổn thương rùi,  
         bây giờ đau nốt rồi thôi, vết thương sẽ mau lành thoi, chứ để như này khó chịu lắm =)))))
         Gặp được nhau đã là 1 cái duyên rồi, bây giờ hết duyên thì đành chịu thui.
     </p>
+<button class="next" onclick="trackClick('next_no','6.red.html')">Block</button>
 </body>
 </html>
