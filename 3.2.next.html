@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Đôi lời muốn nóis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3Q4022EC2M"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-3Q4022EC2M");
+
+    window.onload = () => document.body.style.opacity = "1";
+
+    // Track click + chuyển trang có hiệu ứng
+    function trackClick(choice, url){
+      gtag("event", "button_click", {
+        button_choice: choice,
+        page: document.title
+      });
+      document.body.style.opacity = "0";
+      setTimeout(()=> window.location.href = url, 500);
+    }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Merriweather', serif;
+            font-weight: 300;
+            font-style: italic;
+            background-color: #fde1ea;
+            text-align: left;
+            line-height: 1.8;
+            max-width: 850px;
+            margin: auto;
+            padding-top: 150px;
+            font-size: 22px;
+            color: #333;
+            opacity: 0;
+            transition: opacity 0.8s ease;
+        }
+        body.fade-in { opacity: 1; }
+        body.fade-out { opacity: 0; }
+
+        p { font-size: 20px; line-height: 1.6; max-width: 900px; margin: auto; white-space: pre-line; }
+        button {
+            font-family: 'Merriweather', serif;
+            font-weight: 300;
+            font-style: italic;
+            margin: 10px;
+            padding: 16px 36px;
+            font-size: 22px;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            transition: transform 0.2s ease;
+        }
+        button:hover {
+            transform: scale(1.05);
+        }
+        .next {
+            background-color: #4caf50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <p> Lại 1 tháng nữa trôi qua rồi =))))
+        Tớ cũng đã định gửi cho cậu vào cuối tháng 9 rồi đấy nhưng có 1 số vấn đề mà tớ lại delay thêm 1 thời gian. 
+        1 tháng nữa trôi qua tớ lại có thêm nhiều trải nghiệm mới và cuộc sống tớ cũng có 1 chút thay đổi. Tớ cũng đặt ra cho mình thêm 1 số mục tiêu mà tớ chưa từng làm bao giờ á 🥲
+        Không biết tháng vừa rồi của cậu như thế nào nhỉ? Theo như tớ cập nhật ở 1 số nền tảng mạng xã hội thì cậu cứ lúc nổi lúc chìm chả biết đâu mà lần =)))) chắc chạy deadline căng lắm nhỉ. 
+        Mà chắc từ nãy đến giờ cậu đang thắc mắc sao tớ rảnh lon ngồi làm mấy cái này nhỉ. Tớ cũng không biết nữa 🤔 tớ làm cái này từ lâu lắm rồi (tớ cũng đ biết gọi cái này là cái gì, cứ tạm gọi là bức thư nhưng không được viết tay đi).
+        Tớ làm xong bỏ dở 1 thời gian xong lại làm xong lại cất 1 góc, cứ thế cho đến bây giờ tớ lại tạo thêm 1 slide để yap cho nó dài dòng đây =))))  
+    </p>
+<button class="next" onclick="trackClick('next','4.next.html')">Next</button>
+</body>
+</html>
